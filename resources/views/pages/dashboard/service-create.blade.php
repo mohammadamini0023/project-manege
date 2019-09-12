@@ -28,7 +28,7 @@
                                     <label for="duration" class="col-md-4 col-form-label text-md-right">{{ __('Duration') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="duration" type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration') }}" required autocomplete="duration" autofocus>
+                                        <input id="duration" type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration') }}"  autocomplete="duration" autofocus>
 
                                         @error('duration')
                                         <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
                                     <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price">
+                                        <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" autocomplete="price">
 
                                         @error('price')
                                         <span class="invalid-feedback" role="alert">

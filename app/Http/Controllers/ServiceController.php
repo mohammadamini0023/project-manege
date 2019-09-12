@@ -28,9 +28,7 @@ class ServiceController extends Controller
     {
         Validator::make($request->all(), [
             'name'      => ['required', 'string', 'max:255'],
-            'duration'  => ['required', 'string', 'max:255'],
             'miles'     => ['required', 'numeric'],
-            'price'     => ['required', 'string', 'max:255']
         ])->validate();
 
         $service = Service::create([
@@ -55,9 +53,7 @@ class ServiceController extends Controller
     {
         Validator::make($request->all(), [
             'name'      => ['required', 'string', 'max:255'],
-            'duration'  => ['required', 'string', 'max:255'],
             'miles'     => ['required', 'numeric'],
-            'price'     => ['required', 'string', 'max:255']
         ])->validate();
 
         $service = Service::where('id', $service_id)

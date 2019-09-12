@@ -55,7 +55,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="number_plates" class="col-md-4 col-form-label text-md-right">{{ __('Number Plates') }}</label>
+                                    <label for="number_plates" class="col-md-4 col-form-label text-md-right">{{ __('License Number') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="number_plates" type="text" class="form-control @error('number_plates') is-invalid @enderror" name="number_plates" value="{{ old('number_plates', $vehicle->number_plates) }}" required autocomplete="number_plates">

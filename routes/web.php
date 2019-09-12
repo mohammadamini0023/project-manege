@@ -11,12 +11,12 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/', 'IndexController@index')->name('index');
 
 Route::prefix('dashboard')->middleware(['auth','check-admin'])->name('admin.')->group(function (){
-    Route::get('/', 'DashboardController@index')->name('index');
+//    Route::get('/', 'DashboardController@index')->name('index');
     Route::get('/logout', 'DashboardController@Logout')->name('logout');
     Route::prefix('user')->name('user.')->group(function (){
         Route::get('/', 'UserController@index')->name('index');

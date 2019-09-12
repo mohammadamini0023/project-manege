@@ -25,6 +25,6 @@ class Vehicle extends Model
     }
 
     public function service_vehicle() {
-        return $this->hasMany('App\Models\ServiceVehicle', 'vehicle_id')->get();
+        return $this->hasMany('App\Models\ServiceVehicle', 'vehicle_id')->orderBy('created_at', 'DESC')->first();
     }
 }

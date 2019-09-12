@@ -19,9 +19,9 @@ class CreateVehiclesTable extends Migration
             $table->string('vin_number');
             $table->string('make');
             $table->string('model');
-            $table->string('number_plates');
-            $table->string('color');
-            $table->string('year');
+            $table->string('number_plates')->nullable();
+            $table->string('color')->nullable();
+            $table->string('year')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')

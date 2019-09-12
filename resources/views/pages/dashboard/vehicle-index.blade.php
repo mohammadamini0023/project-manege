@@ -20,9 +20,10 @@
                                 <th>Phone Owner</th>
                                 <th>Vin Number</th>
                                 <th>Make/Model</th>
-                                <th>Number_plates</th>
+                                <th>License Number</th>
                                 <th>Color</th>
                                 <th>Year</th>
+                                <th>Last Service</th>
                                 <th>action</th>
                                 </thead>
                                 <tbody>
@@ -35,6 +36,7 @@
                                         <td>{{ $vehicle->number_plates }}</td>
                                         <td>{{ $vehicle->color }}</td>
                                         <td>{{ $vehicle->year }}</td>
+                                        <td>{{ $vehicle->service_vehicle()->created_at }}</td>
                                         <td>
                                             <a href="{{ route('admin.vehicle.status', ['vehicle_id' => $vehicle->id]) }}" class="btn btn-success btn-fill pull-right">Status</a>
                                             <a href="{{ route('admin.vehicle.edit', ['vehicle_id' => $vehicle->id]) }}" class="btn btn-info btn-fill pull-right ml-1">Edit</a>

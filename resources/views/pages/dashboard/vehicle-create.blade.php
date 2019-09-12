@@ -55,10 +55,10 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="number_plates" class="col-md-4 col-form-label text-md-right">{{ __('Number Plates') }}</label>
+                                    <label for="number_plates" class="col-md-4 col-form-label text-md-right">{{ __('License Number') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="number_plates" type="text" class="form-control @error('number_plates') is-invalid @enderror" name="number_plates" value="{{ old('number_plates') }}" required autocomplete="number_plates">
+                                        <input id="number_plates" type="text" class="form-control @error('number_plates') is-invalid @enderror" name="number_plates" value="{{ old('number_plates') }}" autocomplete="number_plates">
 
                                         @error('number_plates')
                                         <span class="invalid-feedback" role="alert">
@@ -72,7 +72,7 @@
                                     <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('color') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="color" type="text" class="form-control @error('color') is-invalid @enderror" name="color" value="{{ old('color') }}" required autocomplete="color">
+                                        <input id="color" type="text" class="form-control @error('color') is-invalid @enderror" name="color" value="{{ old('color') }}" autocomplete="color">
 
                                         @error('color')
                                         <span class="invalid-feedback" role="alert">
@@ -86,7 +86,7 @@
                                     <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('Year') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="year" type="text" class="form-control @error('year') is-invalid @enderror" name="year" value="{{ old('year') }}" required autocomplete="year">
+                                        <input id="year" type="text" class="form-control @error('year') is-invalid @enderror" name="year" value="{{ old('year') }}" autocomplete="year">
 
                                         @error('year')
                                         <span class="invalid-feedback" role="alert">

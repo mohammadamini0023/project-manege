@@ -35,10 +35,7 @@ class VehicleController extends Controller
             'user_id'    => ['required', 'max:255'],
             'vin_number' => ['required', 'string', 'max:255'],
             'make'       => ['required', 'string', 'max:255'],
-            'model'      => ['required', 'string', 'max:255'],
-            'number_plates'=> ['required', 'string', 'max:255'],
-            'color'        => ['required', 'string', 'max:255'],
-            'year'         => ['required', 'string', 'max:255'],
+            'model'      => ['required', 'string', 'max:255']
         ])->validate();
 
         $vehicle = Vehicle::create([
@@ -70,10 +67,7 @@ class VehicleController extends Controller
             'user_id'    => ['required', 'max:255'],
             'vin_number' => ['required', 'string', 'max:255'],
             'make'       => ['required', 'string', 'max:255'],
-            'model'      => ['required', 'string', 'max:255'],
-            'number_plates'=> ['required', 'string', 'max:255'],
-            'color'        => ['required', 'string', 'max:255'],
-            'year'         => ['required', 'string', 'max:255'],
+            'model'      => ['required', 'string', 'max:255']
         ])->validate();
 
         $vehicle = Vehicle::where('id', $vehicle_id)

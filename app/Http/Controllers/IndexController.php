@@ -8,6 +8,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.user.index');
     }
 }

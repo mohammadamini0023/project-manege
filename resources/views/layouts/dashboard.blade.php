@@ -47,12 +47,12 @@
                 </a>
             </div>
             <ul class="nav">
-                <li class="nav-item {{ (Route::is('admin.index')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('admin.index') }}">
-                        <i class="nc-icon nc-chart-pie-35"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item {{ (Route::is('admin.index')) ? 'active' : '' }}">--}}
+{{--                    <a class="nav-link" href="{{ route('admin.index') }}">--}}
+{{--                        <i class="nc-icon nc-chart-pie-35"></i>--}}
+{{--                        <p>Dashboard</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 <li class="nav-item {{ (Route::is('admin.user.*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.user.index') }}">
                         <i class="nc-icon nc-circle-09"></i>
@@ -86,7 +86,7 @@
                 <li class="nav-item {{ (Route::is('admin.setting.*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.setting.index') }}">
                         <i class="nc-icon nc-settings-90"></i>
-                        <p>Setting</p>
+                        <p>Site Settings</p>
                     </a>
                 </li>
             </ul>
