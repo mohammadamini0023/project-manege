@@ -58,6 +58,8 @@ Route::prefix('dashboard')->middleware(['auth','check-admin'])->name('admin.')->
         Route::get('/', 'SettingController@index')->name('index');
         Route::post('/title', 'SettingController@title')->name('title');
         Route::post('/csvUpload', 'SettingController@csvUpload')->name('csvUpload');
+        Route::get('/csvExportUser', 'SettingController@csvExportUser')->name('csvExportUser');
+        Route::get('/csvExportService', 'SettingController@csvExportService')->name('csvExportService');
     });
     Route::prefix('search')->name('search.')->group(function (){
         Route::get('/', 'SearchController@index')->name('index');

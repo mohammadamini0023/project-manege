@@ -5,6 +5,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
+                    @include('modules.success')
+                    @include('modules.error')
                     <div class="card">
                         <div class="card-body">
                             <form method="POST" action="{{ route('admin.setting.title') }}">
@@ -73,11 +75,29 @@
                                     </div>
                                     <div class="col-md-6 text-center">
                                         <button type="submit" class="btn btn-primary">
-                                            Set Title
+                                            Upload CSV File
                                         </button>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12 text-center">
+                                    <a class="btn btn-primary" href="{{ route('admin.setting.csvExportUser') }}">
+                                        Export CSV Users
+                                    </a>
+                                    <a class="btn btn-primary" href="{{ route('admin.setting.csvExportService') }}">
+                                        Export CSV Service
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
