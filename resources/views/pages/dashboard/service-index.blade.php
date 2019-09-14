@@ -28,7 +28,7 @@
                                     <tr>
                                         <td>{{ $service->id }}</td>
                                         <td>{{ $service->name }}</td>
-                                        <td>{{ $service->duration }}</td>
+                                        <td>{{ (strlen($service->duration) >= 1) ? $service->duration . ' Months' : '-' }}</td>
                                         <td>{{ $service->miles }}</td>
                                         <td>${{ $service->price }}</td>
                                         <td>

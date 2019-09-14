@@ -28,7 +28,7 @@
                                     <label for="duration" class="col-md-4 col-form-label text-md-right">{{ __('Duration') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="duration" type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration', $service->duration) }}" required autocomplete="duration" autofocus>
+                                        <input id="duration" type="number" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration', $service->duration) }}" required autocomplete="duration" autofocus>
 
                                         @error('duration')
                                         <span class="invalid-feedback" role="alert">
