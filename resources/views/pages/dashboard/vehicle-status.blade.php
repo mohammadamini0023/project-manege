@@ -45,6 +45,7 @@
                                                 <td>{{ $item[0]->service()->name }}</td>
                                                 <td>{{ $item[0]->service()->miles }}</td>
                                                 <td>{{ $item[0]->service()->duration }}</td>
+                                                <td>{{ $item[0]->current_miles }}</td>
                                                 <td>{{ (($item[0]->current_miles) < $item[0]->service()->miles ?
                                                  'Due At' : 'Recommended') }}</td>
                                                 <td>{{ ($item[0]->service()->miles + $item[0]->current_miles) }}</td>
