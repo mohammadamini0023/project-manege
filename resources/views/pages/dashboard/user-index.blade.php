@@ -32,8 +32,10 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->address }}</td>
                                         <td>
-                                            <a href="{{ route('admin.user.edit', ['user_id' => $user->id]) }}" class="btn btn-info btn-fill pull-right">Edit</a>
-                                            @if($user->admin_role == 0)
+                                            @if($user->admin_role == 0 || (auth()->user()->admin_role == '1' && $user->admin_role != 2) || (auth()->user()->admin_role == '2') )
+                                                <a href="{{ route('admin.user.edit', ['user_id' => $user->id]) }}" class="btn btn-info btn-fill pull-right">Edit</a>
+                                            @endif
+                                            @if($user->admin_role == 0 || (auth()->user()->admin_role == '2' && $user->admin_role == 1))
                                                 <a href="{{ route('admin.user.delete', ['user_id' => $user->id]) }}" class="btn btn-danger btn-fill pull-right ml-1">Delete</a>
                                             @endif
                                         </td>

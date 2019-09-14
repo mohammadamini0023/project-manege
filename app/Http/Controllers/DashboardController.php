@@ -12,12 +12,6 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
-
-//    public function index()
-//    {
-//        return view('pages.dashboard.dashboard');
-//    }
-
     public function Logout()
     {
         Auth::logout();

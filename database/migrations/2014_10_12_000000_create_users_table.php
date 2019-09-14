@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('address')->nullable();
             $table->string('password');
-            $table->enum('admin_role',['0', '1']);
+            $table->enum('admin_role',['0', '1', '2']);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -36,7 +36,7 @@ class CreateUsersTable extends Migration
             'email' => 'admin@admin.com',
             'address' => 'american',
             'password' =>  Hash::make('123456789'),
-            'admin_role' =>  '1',
+            'admin_role' =>  '2',
             'created_at' =>  Carbon::now(),
             'updated_at' =>  Carbon::now(),
         ]);

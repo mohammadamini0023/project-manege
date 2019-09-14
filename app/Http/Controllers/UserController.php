@@ -70,6 +70,7 @@ class UserController extends Controller
                 'phone' => $request->input('phone'),
                 'address' => $request->input('address'),
                 'email' => $request->input('email'),
+                'admin_role' => ($request->input('admin-access') == "on") ? '1' : '0',
                 ]);
         if($user == true)
             return redirect()->route('admin.user.index')->with('success', 'User info successfully edited.');

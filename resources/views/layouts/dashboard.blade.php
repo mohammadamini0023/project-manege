@@ -77,6 +77,7 @@
                         <p>Services List</p>
                     </a>
                 </li>
+                @if(auth()->user()->admin_role == '2')
                 <li class="nav-item {{ (Route::is('admin.activity.*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.activity.index') }}">
                         <i class="nc-icon nc-bullet-list-67"></i>
@@ -89,6 +90,7 @@
                         <p>Site Settings</p>
                     </a>
                 </li>
+                @endif
             </ul>
         </div>
     </div>
@@ -143,7 +145,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://www.skycomputer.com">Sky Computer</a>
+                        <a href="http://www.skycomputer.co">Sky Computer</a>
                     </p>
                 </nav>
             </div>

@@ -79,6 +79,21 @@
                                     </div>
                                 </div>
 
+                                @if(auth()->user()->admin_role == 2)
+                                <div class="form-group row">
+                                    <label for="address" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                        Administrator Access
+                                        <input id="admin-access" type="checkbox" class="@error('admin-access') is-invalid @enderror" name="admin-access" {{ ($user->admin_role == '1') ? 'checked' : '' }}>
+                                        @error('admin-access')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                @endif
+
                                 <div class="form-group row mb-0">
                                     <div class="col-md-4">
                                     </div>
