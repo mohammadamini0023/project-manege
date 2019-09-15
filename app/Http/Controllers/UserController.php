@@ -80,8 +80,6 @@ class UserController extends Controller
     public function delete($user_id)
     {
         $deleteUser = User::where('id', $user_id);
-        $deleteUser->vehicle()->service_vehicle()->delete();
-        $deleteUser->vehicle()->delete();
         $deleteUser->delete();
         if($deleteUser == true)
             return redirect()->route('admin.user.index')->with('success', 'User info successfully deleted.');
