@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('password');
             $table->enum('admin_role',['0', '1', '2']);
+            $table->engine = 'InnoDB';
             $table->rememberToken();
             $table->timestamps();
         });

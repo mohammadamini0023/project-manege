@@ -19,6 +19,7 @@ class CreateServicesTable extends Migration
             $table->string('duration')->nullable();
             $table->string('miles');
             $table->string('price')->nullable();
+            $table->engine = 'InnoDB';
             $table->timestamps();
         });
     }

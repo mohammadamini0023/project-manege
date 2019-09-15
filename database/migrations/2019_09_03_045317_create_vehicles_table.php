@@ -22,6 +22,7 @@ class CreateVehiclesTable extends Migration
             $table->string('number_plates')->nullable();
             $table->string('color')->nullable();
             $table->string('year')->nullable();
+            $table->engine = 'InnoDB';
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
