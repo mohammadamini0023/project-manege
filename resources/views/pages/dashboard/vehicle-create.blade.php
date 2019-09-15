@@ -101,7 +101,6 @@
 
                                     <div class="col-md-6">
                                         <select name="user_id" class="form-control @error('user_id') is-invalid @enderror">
-                                            <option>Pleas Enter Item</option>
                                             @foreach($users as $user)
                                                 <option value="{{ $user->id }}">{{ $user->phone . '/' . $user->first_name . ' ' . $user->last_name }}</option>
                                             @endforeach
