@@ -23,6 +23,7 @@
                                 <th>Plates</th>
                                 <th>Service</th>
                                 <th>Current Miles</th>
+                                <th>Status</th>
                                 <th>action</th>
                                 </thead>
                                 <tbody>
@@ -36,6 +37,7 @@
                                         <td>{{ $service_vehicle->vehicle()->number_plates }}</td>
                                         <td>{{ $service_vehicle->service()->name }}</td>
                                         <td>{{ $service_vehicle->current_miles }}</td>
+                                        <td>{{ $service_vehicle->status }}</td>
                                         <td>
                                             <a href="{{ route('admin.serviceVehicle.edit', ['service_vehicle_id' => $service_vehicle->id]) }}" class="btn btn-info btn-fill pull-right">Edit</a>
                                             <a href="{{ route('admin.serviceVehicle.delete', ['service_vehicle_id' => $service_vehicle->id]) }}" class="btn btn-danger btn-fill pull-right ml-1">Delete</a>

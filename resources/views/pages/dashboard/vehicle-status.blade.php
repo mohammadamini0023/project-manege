@@ -19,6 +19,7 @@
                                 <th>Miles</th>
                                 <th>Swap(Months)</th>
                                 <th>Current Miles</th>
+                                <th>completed</th>
                                 <th>Last Inv</th>
                                 <th>Last Date</th>
                                 <th>Last Miles</th>
@@ -40,6 +41,7 @@
                                                 <td>{{ $serviceMiles =$item[0]->service()->miles }}</td>
                                                 <td>{{ ($checkDuration = strlen($item[0]->service()->duration) >= 1) ? ($duration = $item[0]->service()->duration) : '-' }}</td>
                                                 <td>{{ $currentMiles = $item[0]->current_miles }}</td>
+                                                <td>{{ $item[0]->status == 'completed' ? 'Yes' : 'No' }}</td>
                                                 <td>{{ $item[1]->inv }}</td>
                                                 <td>{{ $lastDate = $item[1]->created_at }}</td>
                                                 <td>{{ $lastMiles = $item[1]->current_miles }}</td>
@@ -54,6 +56,7 @@
                                                 <td>{{ $item[0]->service()->miles }}</td>
                                                 <td>{{ $item[0]->service()->duration }}</td>
                                                 <td>{{ $item[0]->current_miles }}</td>
+                                                <td>{{ $item[0]->status == 'completed' ? 'Yes' : 'No' }}</td>
                                                 <td>-</td>
                                                 <td>-</td>
                                                 <td>-</td>

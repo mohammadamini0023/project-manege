@@ -12,7 +12,7 @@ class ServiceVehicle extends Model
      * @var array
      */
     protected $fillable = [
-        'inv', 'service_id', 'vehicle_id', 'current_miles',
+        'inv', 'service_id', 'vehicle_id', 'current_miles', 'status',
     ];
 
     public function service() {

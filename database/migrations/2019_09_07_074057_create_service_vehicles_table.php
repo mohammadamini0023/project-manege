@@ -19,6 +19,7 @@ class CreateServiceVehiclesTable extends Migration
             $table->unsignedBigInteger('service_id');
             $table->unsignedBigInteger('vehicle_id');
             $table->string('current_miles');
+            $table->enum('status', ['uncompleted','completed'])->default('completed');
             $table->engine = 'InnoDB';
             $table->timestamps();
 

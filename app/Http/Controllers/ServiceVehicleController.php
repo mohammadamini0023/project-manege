@@ -43,7 +43,8 @@ class ServiceVehicleController extends Controller
             'vehicle_id' => $request->input('vehicle'),
             'service_id' => $request->input('service'),
             'inv'        => $request->input('inv'),
-            'current_miles' => $request->input('current_miles')
+            'current_miles' => $request->input('current_miles'),
+            'status' => ($request->input('status') == "on" ? 'uncompleted' : 'completed'),
         ]);
         if($service !== null)
             return redirect()->route('admin.serviceVehicle.index')->with('success', 'Successfully registered');
@@ -79,12 +80,13 @@ class ServiceVehicleController extends Controller
             'vehicle_id' => $request->input('vehicle'),
             'service_id' => $request->input('service'),
             'inv'        => $request->input('inv'),
-            'current_miles' => $request->input('current_miles')
+            'current_miles' => $request->input('current_miles'),
+            'status' => ($request->input('status') == "on" ? 'uncompleted' : 'completed'),
         ]);
         if($service == true)
             return redirect()->route('admin.serviceVehicle.index')->with('success', 'Successfully Update Service Vehicle');
 
-        return redirect()->route('admin.serviceVehicle.index')->withErrors('There was a problem sending the information. Please try again');
+        return redirect()->route('admin.serviceVehicle.edit')->withErrors('There was a problem sending the information. Please try again');
     }
 
     public function delete($service_vehicle_id)

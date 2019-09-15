@@ -1,14 +1,30 @@
 @extends('layouts.dashboard')
-@section('title','Create Service Vehicle')
+@section('title','Update Service Vehicle')
 @section('content')
     <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
+                    @include('modules.success')
+                    @include('modules.error')
                     <div class="card">
                         <div class="card-body">
                             <form method="POST" action="{{ route('admin.serviceVehicle.update', ['service_vehicle_id' => $serviceVehicle->id]) }}">
                                 @csrf
+
+                                <div class="form-group row">
+                                    <label for="inv" class="col-md-4 col-form-label text-md-right">{{ __('Inv') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="inv" type="text" class="form-control @error('inv') is-invalid @enderror" name="inv" value="{{ old('inv', $serviceVehicle->inv) }}" required autocomplete="inv" autofocus>
+
+                                        @error('inv')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
+                                </div>
 
                                 <div class="form-group row">
                                     <label for="vehicle" class="col-md-4 col-form-label text-md-right">{{ __('Select Vehicle') }}</label>
@@ -55,6 +71,19 @@
                                         </select>
 
                                         @error('service')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="status" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                        Uncompleted
+                                        <input id="status" type="checkbox" name="status" {{ ($serviceVehicle->status == "uncompleted") ? 'checked' : '' }}>
+                                        @error('status')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

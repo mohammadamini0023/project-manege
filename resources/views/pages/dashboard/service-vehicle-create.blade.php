@@ -5,6 +5,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
+                    @include('modules.success')
+                    @include('modules.error')
                     <div class="card">
                         <div class="card-body">
                             <form method="POST" action="{{ route('admin.serviceVehicle.store') }}">
@@ -69,6 +71,19 @@
                                         <input id="current_miles" type="text" class="form-control @error('current_miles') is-invalid @enderror" name="current_miles" value="{{ old('current_miles') }}" required autocomplete="current_miles" autofocus>
 
                                         @error('current_miles')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="status" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                        Uncompleted
+                                        <input id="status" type="checkbox" name="status">
+                                        @error('status')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
