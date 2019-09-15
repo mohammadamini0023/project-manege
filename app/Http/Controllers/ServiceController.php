@@ -71,7 +71,9 @@ class ServiceController extends Controller
 
     public function delete($service_id)
     {
-        $deleteService = Service::where('id', $service_id)->delete();
+        $deleteService = Service::where('id', $service_id);
+        $deleteService->service_vehicle()->delete();
+        $deleteService->delete();
         if($deleteService == true)
             return redirect()->route('admin.service.index')->with('success', 'service info successfully deleted.');
         return redirect()->route('admin.service.index')->withErrors('There was a problem sending the information. Please try again');

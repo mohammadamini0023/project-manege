@@ -87,7 +87,9 @@ class VehicleController extends Controller
 
     public function delete($vehicle_id)
     {
-        $deleteVehicle = Vehicle::where('id', $vehicle_id)->delete();
+        $deleteVehicle = Vehicle::where('id', $vehicle_id);
+        $deleteVehicle->service_vehicle()->delete();
+        $deleteVehicle->delete();
         if($deleteVehicle == true)
             return redirect()->route('admin.vehicle.index')->with('success', 'Vehicle info successfully deleted.');
         return redirect()->route('admin.vehicle.index')->withErrors('There was a problem sending the information. Please try again');
